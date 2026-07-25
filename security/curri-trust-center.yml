@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: searched
+probe: false
+source: https://trust.curri.com/
+url: https://trust.curri.com/
+title: Curri Trust Center
+certifications: []
+evidence:
+  - {source: https://trust.curri.com/, status: 200, note: "Live trust center portal (client-rendered; specific certification names not machine-verifiable from the static HTML)."}
+notes: >-
+  Curri publishes a trust center at trust.curri.com. Named certifications
+  (SOC 2 / ISO 27001 / etc.) could not be verified verbatim from the static
+  page, so none are asserted here and no Compliance pointer is emitted to avoid
+  fabrication. Upgrade this file if the certification list is confirmed.

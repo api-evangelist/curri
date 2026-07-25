@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.curri.com/docs/
+api_style: graphql
+endpoint: https://api.curri.com/graphql
+authentication:
+  style: http-basic
+  detail: Base64(userId:apiKey) in the Authorization header; separate Sandbox key for test mode.
+  ref: authentication/curri-authentication.yml
+idempotency:
+  supported: false
+  detail: No idempotency-key header or documented idempotent-retry contract published.
+pagination:
+  supported: unknown
+  detail: No cursor/offset pagination convention is documented for list queries (deliveries).
+error_envelope:
+  detail: GraphQL `errors` array at the JSON root on HTTP 200; HTTP 400 for malformed payloads.
+  ref: errors/curri-problem-types.yml
+versioning:
+  detail: Unversioned single GraphQL endpoint; additive schema evolution.
+  ref: lifecycle/curri-lifecycle.yml
+webhooks:
+  detail: HTTP POST to a configured URL ~every 20s until terminal status; also long-poll deliveries.
+  ref: asyncapi/curri-webhooks.yml
+quotes:
+  detail: Quotes are optional and expire after 15 minutes; bookDelivery can skipQuote.
+rate_limiting:
+  detail: No published rate-limit headers or documented quotas.
+notes: >-
+  Cross-cutting semantics captured from the public docs. Idempotency is NOT
+  supported, so no Idempotency pointer is emitted for this provider.

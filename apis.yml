@@ -1,8 +1,15 @@
 aid: curri
 name: Curri
-description: 'Curri is a company surfaced as a portfolio company of bessemer-venture-partners, initialized-capital
-  and added to the API Evangelist network as a stub for enrichment. Sector: vertical-software. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Curri is a last-mile and same-day delivery platform built for construction and
+  industrial supplies. It lets distributors and suppliers dispatch on-demand
+  drivers (Hotshots), run dedicated recurring fleets, and orchestrate a vetted
+  nationwide carrier network including LTL freight — with smart vehicle matching,
+  live tracking and ETAs, digital proof-of-delivery, and route planning. Curri's
+  GraphQL API (https://api.curri.com/graphql) connects a customer's own systems
+  to the platform so they can request quotes, book and manage deliveries, and
+  track drivers in real time without logging into the app. Authentication is HTTP
+  Basic with an issued API key plus a separate Sandbox key for test bookings.
 url: https://raw.githubusercontent.com/api-evangelist/curri/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,13 +18,67 @@ x-backed-by:
 - initialized-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.curri.com/favicon.ico
 tags:
 - Company
 - Vertical Software
-apis: []
+- Delivery
+- Logistics
+- Last Mile
+- Freight
+- Construction
+- Supply Chain
+- GraphQL
+apis:
+- name: Curri GraphQL API
+  description: >-
+    GraphQL API for requesting delivery quotes, booking on-demand and scheduled
+    deliveries, managing and canceling deliveries, and tracking drivers in real
+    time via webhooks or long polling.
+  humanURL: https://docs.curri.com/docs/
+  baseURL: https://api.curri.com/graphql
+  tags:
+  - Delivery
+  - Logistics
+  - GraphQL
+  properties:
+  - type: Documentation
+    url: https://docs.curri.com/docs/
+  - type: GettingStarted
+    url: https://docs.curri.com/docs/getting-started
+  - type: APIReference
+    url: https://docs.curri.com/docs/queries-and-mutations/appendix
+  - type: Authentication
+    url: authentication/curri-authentication.yml
+  - type: Webhooks
+    url: asyncapi/curri-webhooks.yml
+  - type: Sandbox
+    url: sandbox/curri-sandbox.yml
+  - type: Conventions
+    url: conventions/curri-conventions.yml
+  - type: ErrorCatalog
+    url: errors/curri-problem-types.yml
+  - type: Conformance
+    url: conformance/curri-conformance.yml
+  - type: MCPServer
+    url: mcp/curri-mcp.yml
+  - type: AgentSkill
+    url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +87,52 @@ maintainers:
 common:
 - type: Website
   url: https://www.curri.com/
+- type: DeveloperPortal
+  url: https://docs.curri.com/docs/
+- type: Documentation
+  url: https://docs.curri.com/docs/
+- type: APIReference
+  url: https://docs.curri.com/docs/queries-and-mutations/appendix
+- type: GettingStarted
+  url: https://docs.curri.com/docs/getting-started
+- type: Support
+  url: https://help.curri.com/en/
+- type: Blog
+  url: https://www.curri.com/blog
+- type: SignUp
+  url: https://app.curri.com/signup/create
+- type: TermsOfService
+  url: https://www.curri.com/terms
+- type: PrivacyPolicy
+  url: https://www.curri.com/privacy
+- type: StatusPage
+  url: https://status.curri.com/
+- type: TrustCenter
+  url: https://trust.curri.com/
+- type: LLMsTxt
+  url: llms/curri-llms.txt
+- type: Authentication
+  url: authentication/curri-authentication.yml
+- type: Webhooks
+  url: asyncapi/curri-webhooks.yml
+- type: Sandbox
+  url: sandbox/curri-sandbox.yml
+- type: Conventions
+  url: conventions/curri-conventions.yml
+- type: ErrorCatalog
+  url: errors/curri-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/curri-lifecycle.yml
+- type: Conformance
+  url: conformance/curri-conformance.yml
+- type: MCPServer
+  url: mcp/curri-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/curri-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

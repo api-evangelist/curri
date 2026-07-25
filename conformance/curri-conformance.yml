@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.curri.com/docs/
+standards:
+  - id: graphql
+    conforms: true
+    evidence: Single GraphQL endpoint at https://api.curri.com/graphql with queries and mutations.
+  - id: http-basic-auth
+    conforms: true
+    evidence: RFC 7617 Basic authentication (base64 userId:apiKey) in the Authorization header.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth 2.0 authorization surface published.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Uses GraphQL errors-array convention, not application/problem+json.
+  - id: webhooks
+    conforms: true
+    evidence: HTTP POST delivery-status callbacks documented (asyncapi/curri-webhooks.yml).
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key contract documented.

@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.curri.com/docs/
+versioning:
+  scheme: unversioned-graphql
+  current: null
+  docs: https://docs.curri.com/docs/
+  notes: >-
+    Single GraphQL endpoint (https://api.curri.com/graphql); no URI/date version
+    prefix is published. Schema evolves additively per GraphQL conventions.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.curri.com/
+deprecated_operations: []

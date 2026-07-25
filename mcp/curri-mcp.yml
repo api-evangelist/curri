@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://docs.curri.com/docs/queries-and-mutations
+summary: >-
+  No official hosted/remote Curri MCP server was found (docs, npm
+  @modelcontextprotocol, MCP registries all negative as of this run). The tools
+  below are a CANDIDATE surface derived from Curri's documented GraphQL
+  operations, provided as a starting point for an agent integration.
+server:
+  name: curri
+  transport: http
+  url: null
+  endpoint: https://api.curri.com/graphql
+  auth: HTTP Basic (base64 userId:apiKey)
+tools:
+  - name: get_delivery_quote
+    description: Get pricing for a delivery before booking (quotes expire after 15 minutes).
+    source_operation: graphql#deliveryQuote
+  - name: list_delivery_quotes
+    description: Get multiple delivery quotes for a set of parameters.
+    source_operation: graphql#deliveryQuotes
+  - name: book_delivery
+    description: Book a delivery, either from a deliveryQuoteId or with skipQuote parameters.
+    source_operation: graphql#bookDelivery
+  - name: get_delivery
+    description: Retrieve a single delivery and its current status / tracking URL.
+    source_operation: graphql#delivery
+  - name: list_deliveries
+    description: List deliveries and long-poll for status updates.
+    source_operation: graphql#deliveries

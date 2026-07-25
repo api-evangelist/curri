@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.curri.com/docs/webhooks-errors-statuses/webhooks
+spec_type: Webhooks
+summary: >-
+  Curri delivers real-time delivery lifecycle updates to a configured HTTPS
+  endpoint via HTTP POST. Updates are pushed approximately every 20 seconds for
+  the life of a delivery until it reaches a terminal status (delivered,
+  canceled, returned). Subscriptions are provisioned by the Curri team on
+  request (no self-service registration or documented HMAC signature).
+transport: http-post
+delivery_cadence: every ~20 seconds until terminal status
+subscription: manual (contact Curri to register your webhook URL)
+signature_verification: not documented
+payload_fields:
+  - delivery id
+  - tracking url
+  - origin (address + coordinates)
+  - destination (address + coordinates)
+  - driver + vehicle details
+  - current location coordinates
+  - status
+  - images (proof of delivery)
+  - cancellationReason (on cancellation)
+  - timestamps (createdAt, scheduledAt, deliveredAt)
+statuses:
+  - {status: pending, meaning: Awaiting match with courier}
+  - {status: awaiting_quote, meaning: Awaiting quote from Curri sales}
+  - {status: quote_given, meaning: Quote has been given to customer}
+  - {status: quote_declined, meaning: Quote was declined}
+  - {status: quote_expired, meaning: Customer has not responded to quote}
+  - {status: scheduled, meaning: Scheduled for a future date and time}
+  - {status: assigned_awaiting_fulfillment, meaning: Driver assigned but finalizing another delivery}
+  - {status: en_route_to_origin, meaning: Driver is en route to pickup the items}
+  - {status: at_origin, meaning: Driver has arrived to origin to secure payload}
+  - {status: holding, meaning: Delivery held by driver}
+  - {status: en_route_to_destination, meaning: Driver is en route to destination}
+  - {status: at_destination, meaning: Driver has arrived to destination}
+  - {status: delivered, meaning: Successful delivery}
+  - {status: canceled, meaning: Delivery was canceled prior to arrival at destination}
+  - {status: test, meaning: Test delivery placed by an internal Curri user}
+polling_alternative: >-
+  Consumers may also long-poll the deliveries query for status changes, or use
+  the live tracking webpage URL returned on the delivery object.

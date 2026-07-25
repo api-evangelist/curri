@@ -1,0 +1,8 @@
+generated: '2026-07-18'
+method: generated
+source: https://docs.curri.com/docs/
+skills:
+  - file: curri-book-a-delivery.md
+    name: Book a Curri delivery
+    api: https://api.curri.com/graphql
+    operations: [deliveryQuote, bookDelivery, delivery]

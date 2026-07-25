@@ -1,0 +1,22 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.curri.com/docs/getting-started
+docs: https://docs.curri.com/docs/getting-started/tutorial
+summary: >-
+  Curri issues a dedicated Sandbox key alongside the live API key on account
+  approval. Requests made with the Sandbox key create test deliveries: no real
+  drivers are assigned and no charges are processed. Test deliveries surface
+  with the `test` delivery status.
+modes:
+  - name: live
+    credential: API key (Basic auth, base64 of userId:apiKey)
+  - name: sandbox
+    credential: Sandbox key (separate key issued at approval)
+    behavior: no drivers assigned, no charges processed
+    marker_status: test
+endpoint: https://api.curri.com/graphql
+test_values:
+  note: >-
+    Curri does not publish fixed magic test identifiers (test cards / addresses).
+    Sandbox behavior is selected entirely by using the Sandbox key rather than
+    the live key. No verbatim test values were invented.

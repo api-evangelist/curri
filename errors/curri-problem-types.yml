@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.curri.com/docs/webhooks-errors-statuses/errors
+format: graphql-errors
+envelope: >-
+  Application/validation errors are returned with HTTP 200 and an `errors` array
+  at the root of the JSON response (GraphQL convention). Malformed or incomplete
+  request payloads return HTTP 400.
+problems:
+  - status: 200
+    type: graphql-error
+    title: GraphQL execution error
+    detail: >-
+      A resolver-level error (e.g. business-rule or validation failure). Returned
+      with HTTP 200 and one or more entries in the root `errors` array; inspect
+      each entry's message and path.
+  - status: 400
+    type: malformed-request
+    title: Malformed or incomplete request
+    detail: >-
+      Required fields missing or the request body is malformed. Returned as an
+      HTTP 400 before GraphQL execution.
+notes: >-
+  Curri is not RFC 9457 (application/problem+json); it follows the GraphQL
+  errors-array convention. Cancellation reasons are enumerated separately via the
+  `cancellationReason` field on canceled deliveries.
