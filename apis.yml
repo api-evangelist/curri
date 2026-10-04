@@ -47,7 +47,20 @@ specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 image: https://www.curri.com/favicon.ico
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-25
 tags:
+- Company
+- Vertical Software
+- Delivery
+- Logistics
+- Last Mile Delivery
+- Freight
+- Construction
+- Supply Chain
+- GraphQL
+tags_raw:
 - Company
 - Vertical Software
 - Delivery
